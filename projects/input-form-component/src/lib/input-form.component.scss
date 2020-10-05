@@ -1,0 +1,24 @@
+
+.vertical-middle {
+  vertical-align: middle;
+}
+ckeditor{
+  width: 100%;
+}
+
+.font-10{
+  font-size: 10px;
+}
+.ng-select .is-invalid .ng-select-container{
+  border-color: #f1556c !important;
+}
+ng-select.is-invalid {
+  .ng-select.ng-select-opened.ng-select-bottom>.ng-select-container{
+    border-color: #f1556c;
+
+  }
+input:disabled {
+    background: #dddddd;
+  }
+
+}

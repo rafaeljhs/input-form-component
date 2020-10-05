@@ -164,6 +164,46 @@
           }
         }
       }
+    },
+    "input-form-component": {
+      "projectType": "library",
+      "root": "projects/input-form-component",
+      "sourceRoot": "projects/input-form-component/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/input-form-component/tsconfig.lib.json",
+            "project": "projects/input-form-component/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/input-form-component/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/input-form-component/src/test.ts",
+            "tsConfig": "projects/input-form-component/tsconfig.spec.json",
+            "karmaConfig": "projects/input-form-component/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/input-form-component/tsconfig.lib.json",
+              "projects/input-form-component/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "input-form",

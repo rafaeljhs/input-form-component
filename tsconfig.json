@@ -19,6 +19,10 @@
       "component": [
         "dist/component/component",
         "dist/component"
+      ],
+      "input-form-component": [
+        "dist/input-form-component/input-form-component",
+        "dist/input-form-component"
       ]
     }
   }

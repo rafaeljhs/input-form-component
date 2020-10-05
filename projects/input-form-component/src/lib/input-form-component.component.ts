@@ -2,16 +2,15 @@ import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@
 import { FormGroup } from '@angular/forms';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-// import * as moment from 'moment';
-// import flatpickr from "flatpickr";
 declare var flatpickr
+
+
 @Component({
   selector: 'input-form',
-  templateUrl: './component.component.html',
-  styleUrls: ['./component.component.scss'],
+  templateUrl: './input-form-component.html',
+  styleUrls: ['./input-form.component.scss']
 })
-export class ComponentComponent implements OnInit {
-
+export class InputFormComponentComponent implements OnInit {
   @Input() label: string;
   @Input() name: string;
   @Input() mask: string = null;
@@ -57,11 +56,9 @@ export class ComponentComponent implements OnInit {
   public Editor = ClassicEditor;
 
   // public currentDate = moment().format("YYYY-MM-DD");
+  constructor() { }
 
-  constructor(
-  ) {
 
-  }
   colorChange() {
     this.f.setValue(this.componentcolor);
   }

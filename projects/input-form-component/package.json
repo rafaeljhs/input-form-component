@@ -1,0 +1,26 @@
+{
+  "name": "@rafaeljr96/input-form-component",
+  "version": "0.0.1",
+  "description": "Exemplo de publicação de pacote no npmJS",
+  "author": "Rafael Junior",
+  "scripts": {
+    "deploy": "npm publish --access public"
+  },
+  "peerDependencies": {
+    "@angular/common": "^10.1.4",
+    "@angular/core": "^10.1.4",
+    "ngx-mask": "^10.0.4",
+    "@ng-select/ng-select": "^5.0.4",
+    "ngx-ui-switch": "^10.0.2",
+    "@ckeditor/ckeditor5-angular": "^1.2.3"
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-angular": "^1.2.3",
+    "@ckeditor/ckeditor5-build-classic": "^23.0.0",
+    "@ng-select/ng-select": "^5.0.4",
+    "ngx-color-picker": "^10.1.0",
+    "ngx-mask": "^10.0.4",
+    "ngx-ui-switch": "^10.0.2",
+    "tslib": "^2.0.0"
+  }
+}

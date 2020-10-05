@@ -9,7 +9,7 @@
 
 # dependencies
 /node_modules
-/projects/component/node_modules
+/projects/input-form-component/node_modules
 
 # profiling files
 chrome-profiler-events*.json
