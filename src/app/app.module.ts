@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ComponentModule } from 'projects/component/src/public-api';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,7 @@ import { ComponentModule } from 'projects/component/src/public-api';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ComponentModule
+    PagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

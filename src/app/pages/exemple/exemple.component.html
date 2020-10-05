@@ -1,0 +1,442 @@
+<div class="container-fluid">
+
+
+  <!-- <app-page-title title="Input-Form v1.1.6"></app-page-title> -->
+
+  <h2 class="text-center">Input-Form v1.1.6</h2>
+  <div class="row">
+    <div class="col-12">
+      <div class="card-box">
+        <div class="row">
+          <div class="col-md-4">
+            <ul class="sitemap">
+              <li><a href="javascript: void(0);" class="text-uppercase font-weight-bold"><i
+                    class="mdi mdi-adjust mr-1"></i>Links</a>
+                <ul>
+
+                  <li>
+                    <a href="javascript: void(0);" (click)="scrollToElement(ex1)">
+                      1- Instalação
+                    </a>
+                  </li>
+                  <li><a href="javascript: void(0);" (click)="scrollToElement(ex2)">
+                      2- Exemplo de uso básico
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript: void(0);" (click)="scrollToElement(ex3)">
+                      3 - Tipo "date"
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript: void(0);" (click)="scrollToElement(ex4)">
+                      4 - Tipo "select"
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript: void(0);" (click)="scrollToElement(ex5)">
+                      5 - Tipo "color"
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript: void(0);" (click)="scrollToElement(ex6)">
+                      6 - Tipo "switch"
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="javascript: void(0);" (click)="scrollToElement(ex7)">
+                      7 - Tipo "html"
+                    </a>
+                  </li>
+
+
+
+                  <!-- <li><a href="javascript: void(0);" (click)="scrollToElement(ex3)"><i class="fe-airplay mr-1"></i>1 -
+                      3- Exemplos tipos "tradicionais"</a>
+                    <ul>
+                      <li><a href="javascript: void(0);" (click)="scrollToElement(ex31)">#1 - Habilite GZIP</a></li>
+                      <li><a href="javascript: void(0);">Analytics</a></li>
+                      <li><a href="javascript: void(0);">Minimal</a></li>
+                      <li><a href="javascript: void(0);">eCommerce</a></li>
+                    </ul>
+                  </li> -->
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <div #ex1>
+              <h3>1 - Instalação</h3>
+              <p>Baixar no link o componente e: <a
+                  href="https://github.com/rafaeljhs/input-form/tree/master/src/app/components/input-form"> Aqui</a></p>
+              <ol>
+                <li>Abrir o ".module.ts" onde o componete vai ser utilizado</li>
+                <li>Na propriedade "imports" adicionar a referência a "InputFormModule,ReactiveFormsModule"</li>
+                <li>Na propriedade "exports" adicionar a referência a "InputFormComponent"</li>
+                <li> Abrir o 'index.html' e colocar os links
+                  <textarea rows="4" disabled>
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+                    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+                    <script src="https://npmcdn.com/flatpickr/dist/l10n/pt.js"></script>
+                  </textarea>
+                </li>
+
+              </ol>
+
+              <h5>Eventos padrão </h5>
+
+              <table>
+                <tr>
+                  <th>
+                    Evento
+                  </th>
+                  <th>
+                    O que faz?
+                  </th>
+                </tr>
+                <tr>
+                  <td>focusout</td>
+                  <td>Quando perde o foco do atributo</td>
+                </tr>
+                <tr>
+                  <td>keyup</td>
+                  <td>Quando termina de apertar uma tecla</td>
+                </tr>
+
+              </table>
+
+            </div>
+            <div #ex2>
+              <h3>2 - Uso simples</h3>
+              <p>Baixar no link o componente e:</p>
+              <p>Tipos "tradicionais" suportados:
+                button,checkbox,color,date,datetime-local,email,file,hidden,image,month,number,password,radio,range,reset,search,submit,tel,text
+                ,time,url,week
+              </p>
+              <ol>
+                <li>
+                  html
+                  <p>
+                    <textarea rows="4" disabled>
+                    <form class="needs-validation" [formGroup]="formSimple" (ngSubmit)="onSubmit1()" novalidate>
+                      <div class="row">
+                        <div class="col-6 form-group mb-3">
+                          <input-form label='Nome' name='name' [submitted]='submittedSimple' [formGroup]="formSimple">
+                          </input-form>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="text-right mb-3">
+                            <button type="submit" class="btn btn-blue block waves-effect waves-ligh"
+                              [disabled]="submitting">
+                              <span class="spinner-grow spinner-grow-sm mr-1" *ngIf="submittingSimple"></span>
+                              Salvar
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+
+                  </textarea>
+                  </p>
+                </li>
+                <li>
+                  ts
+                  <p>
+                    <textarea rows="4" disabled>
+                    formSimple: FormGroup;
+                    submittedSimple = false;
+                    submittingSimple = false;
+                    constructor(
+                      private formBuilder: FormBuilder,
+                    ) { }
+
+                    ngOnInit() {
+                      this.formSimple = this.formBuilder.group({
+                        name: ['', [Validators.required]],
+                      });
+                    }
+                    onSubmit1() {
+                      this.submittedSimple = true;
+                      if (this.formSimple.invalid) {
+                        return;
+                      }
+                      this.submittingSimple = true;
+                    }
+                  </textarea>
+                  </p>
+                </li>
+              </ol>
+
+
+              <form class="needs-validation" [formGroup]="formSimple" (ngSubmit)="onSubmit1()" novalidate>
+                <div class="row">
+                  <div class="col-6 form-group mb-3">
+                    <input-form label='Nome' name='name' [submitted]='submittedSimple' [formGroup]="formSimple">
+                    </input-form>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="text-right mb-3">
+                      <button type="submit" class="btn btn-blue block waves-effect waves-ligh" [disabled]="submitting">
+                        <span class="spinner-grow spinner-grow-sm mr-1" *ngIf="submittingSimple"></span>
+                        Salvar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+            <form class="needs-validation" [formGroup]="formGroup" (ngSubmit)="onSubmit()" novalidate>
+              <div #ex3>
+                <h3>3 - Tipo "date"</h3>
+                <p>Blibioteca utilizada:<a href="https://flatpickr.js.org/"> flatpickr</a><br>
+                  Atributos implementados "minDate", "maxDate", "dateFormat"
+                </p>
+                <table>
+                  <tr>
+                    <th>
+                      Atributo
+                    </th>
+                    <th>
+                      Valor padrão
+                    </th>
+                    <th>
+                     Exemplo
+                    </th>
+                  </tr>
+                  <tr>
+                    <td>minDate</td>
+                    <td>null </td>
+                    <td>"2020-01"-"today" - new Date().fp_incr(14) // 14 days from now </td>
+                  </tr>
+                  <tr>
+                    <td>maxDate</td>
+                    <td>null</td>
+                    <td>"2020-01"-"today" - new Date().fp_incr(14) // 14 days from now </td>
+
+                  </tr>
+                  <tr>
+                    <td>dateFormat</td>
+                    <td>"d/m/Y"</td>
+                    <td>"d/m/Y"-"Y/m/d"-"d.m.Y"-"H:i"</td>
+                  </tr>
+                  <tr>
+                    <td>altFormat</td>
+                    <td>"d/m/Y"</td>
+                    <td>"d/m/Y"-"Y/m/d"-"d.m.Y"-"H:i"</td>
+                  </tr>
+
+
+
+                </table>
+                <div class="row">
+                  <div class="col-6 form-group mb-3">
+                    <input-form type="date" label='Date' name='ex1' [submitted]='submitted' [formGroup]="formGroup">
+                    </input-form>
+                  </div>
+                  <div class="col-6 form-group mb-3">
+                    <input-form type="date" minDate="today" label='Data minima hoje' name='ex2' [submitted]='submitted'
+                      [formGroup]="formGroup">
+                    </input-form>
+                  </div>
+
+                  <div class="col-6 form-group mb-3">
+                    <input-form type="daterange" label='Intervalo de data' name='ex3' [submitted]='submitted'
+                      [formGroup]="formGroup">
+                    </input-form>
+                  </div>
+                </div>
+              </div>
+
+              <div #ex4>
+                <h3>4 - Tipo "select"</h3>
+                <p>Blibioteca utilizada:<a href="https://github.com/ng-select/ng-select"> Angular ng-select</a><br>
+                  Atributos implementados
+                </p>
+                <table>
+                  <tr>
+                    <th>
+                      Atributo
+                    </th>
+                    <th>
+                      Valor padrão
+                    </th>
+                  </tr>
+                  <tr>
+                    <td>selectLabel</td>
+                    <td>name</td>
+                  </tr>
+                  <tr>
+                    <td>selectId</td>
+                    <td>id</td>
+                  </tr>
+                  <tr>
+                    <td>notFoundText</td>
+                    <td>Itens não encontrados</td>
+                  </tr>
+                  <tr>
+                    <td>multiple</td>
+                    <td>false</td>
+                  </tr>
+                  <tr>
+                    <td>tag</td>
+                    <td>false</td>
+                  </tr>
+                  <tr>
+                    <td>items</td>
+                    <td>null</td>
+                  </tr>
+
+                </table>
+                <h5>Eventos "clear" </h5>
+
+                <ol>
+                  <li>"clear()"=Evento quando clica no 'x' do select </li>
+
+                </ol>
+                <div class="row mt-2">
+                  <div class="col-6 form-group mb-3">
+                    <input-form type="select" [items]="cities" label='Simples' name='ex5' [submitted]='submitted'
+                      [formGroup]="formGroup">
+                    </input-form>
+                  </div>
+                  <div class="col-6 form-group mb-3">
+                    <input-form type="select" [multiple]="true" [items]="cities" label='Multiplo' name='ex6'
+                      [submitted]='submitted' [formGroup]="formGroup">
+                    </input-form>
+                  </div>
+
+                  <div class="col-6 form-group mb-3">
+                    <input-form type="select" [multiple]="true" [tag]="true" label='Tags' name='ex7'
+                      [submitted]='submitted' [formGroup]="formGroup">
+                    </input-form>
+                  </div>
+                </div>
+              </div>
+              <div #ex5>
+                <h3>5 - Tipo "color"</h3>
+                <p>Blibioteca utilizada:<a href="https://www.npmjs.com/package/ngx-color-picker">
+                    ngx-color-picker</a><br>
+
+                </p>
+                <!-- <table>
+                  <tr>
+                    <th>
+                      Atributo
+                    </th>
+                    <th>
+                      Valor padrão
+                    </th>
+                  </tr>
+                  <tr>
+                    <td>selectLabel</td>
+                    <td>name</td>
+                  </tr>
+                  <tr>
+                    <td>selectId</td>
+                    <td>id</td>
+                  </tr>
+                  <tr>
+                    <td>notFoundText</td>
+                    <td>Itens não encontrados</td>
+                  </tr>
+                  <tr>
+                    <td>multiple</td>
+                    <td>false</td>
+                  </tr>
+                  <tr>
+                    <td>tag</td>
+                    <td>false</td>
+                  </tr>
+                  <tr>
+                    <td>items</td>
+                    <td>null</td>
+                  </tr>
+
+                </table>
+                <h5>Eventos "clear" </h5>
+
+                <ol>
+                  <li>"clear()"=Evento quando clica no 'x' do select </li>
+                </ol> -->
+
+                <div class="row mt-2">
+                  <div class="col-6 form-group mb-3">
+                    <input-form type="color" label='Cor' name='ex8' [submitted]='submitted' [formGroup]="formGroup">
+                    </input-form>
+                  </div>
+                </div>
+              </div>
+
+              <div #ex6>
+                <h3>6 - Tipo "switch"</h3>
+                <p>Blibioteca utilizada:<a href="https://www.npmjs.com/package/ngx-ui-switch"> Ngx UI Switch
+                    Component</a><br>
+
+                </p>
+                <table>
+                  <tr>
+                    <th>
+                      Atributo
+                    </th>
+                    <th>
+                      Valor padrão
+                    </th>
+                  </tr>
+                  <tr>
+                    <td>defaultBoColor</td>
+                    <td>#dfdfdf</td>
+                  </tr>
+
+
+                </table>
+                <!-- <h5>Eventos "clear" </h5>
+
+                <ol>
+                  <li>"clear()"=Evento quando clica no 'x' do select </li>
+                </ol> -->
+
+                <div class="row mt-2">
+                  <div class="col-6 form-group mb-3">
+                    <input-form type="switch" label='switch' name='ex9' [submitted]='submitted' [formGroup]="formGroup">
+                    </input-form>
+                  </div>
+                </div>
+              </div>
+
+              <div #ex7>
+                <h3>7 - Tipo "html"</h3>
+                <p>Blibioteca utilizada:<a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-angular"> CKEditor 5 rich text editor component for Angular</a><br>
+
+                </p>
+
+                <div class="row mt-2">
+                  <div class="col-12 form-group mb-3">
+                    <input-form type="html" label='HTML' name='ex10' [submitted]='submitted' [formGroup]="formGroup">
+                    </input-form>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  <div class="text-right mb-3">
+                    <button type="submit" class="btn btn-blue block waves-effect waves-ligh" [disabled]="submitting">
+                      <span class="spinner-grow spinner-grow-sm mr-1" *ngIf="submitting"></span>
+                      Salvar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
