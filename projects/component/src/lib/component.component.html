@@ -1,0 +1,73 @@
+<label class="text-nowrap" for="">{{label}}</label>
+  <ng-content></ng-content>
+  <span class="text-danger" >asdsadsadsadsda</span>
+<!--
+<div [formGroup]="formGroup">
+
+
+
+  <label *ngIf="type!='checkbox'" [for]="name">{{label}} <span [hidden]="!required" class="text-danger">*</span></label>
+  <input
+    *ngIf="type!='textarea' && type!='html' && type!='color' &&  type!='select'&&  type!='number' &&   type!='switch' &&  type!='checkbox' "
+    [formControlName]="name" [type]="type=='daterange' || type=='date' ?'text':type" [id]="name" class="form-control"
+    placeholder="{{placeholder?placeholder:'Digite o '+label}}"  data-toggle="input-mask" [mask]="mask"
+    [class.is-invalid]="submitted && f.errors" />
+
+
+  <input *ngIf="type =='number'" [formControlName]="name" type="number" [id]="name" class="form-control"
+    placeholder="{{placeholder?placeholder:'Digite o '+label}}" [class.is-invalid]="submitted && f.errors" />
+
+
+  <div *ngIf="type=='color'" class="input-group">
+    <input type="text" [id]="name" [formControlName]="name" [class.is-invalid]="submitted && f.errors"
+      class="form-control input-lg" [value]="componentcolor">
+    <span class="input-group-append">
+      <span class="input-group-text colorpicker-input-addon" [style.background]="componentcolor"
+        [(colorPicker)]="componentcolor" (colorPickerChange)="colorChange()" [cpPosition]="'bottom'"><i></i></span>
+    </span>
+  </div>
+
+
+  <label *ngIf="type=='checkbox'">&nbsp;</label>
+  <div *ngIf="type=='checkbox'" class="custom-control custom-checkbox">
+    <input type="checkbox" [formControlName]="name" class="custom-control-input" [id]="name">
+    <label class="custom-control-label" [for]="name">{{label}}</label>
+  </div>
+
+
+  <div *ngIf="type=='switch'">
+    <ui-switch (valueChange)="emitS('change')" class="vertical-middle" [defaultBoColor]="defaultBoColor"
+      [formControlName]="name" [id]="name" [color]="color" checked></ui-switch>
+    <label class="ml-2" [for]="name">{{f && f.value?'Sim':'Não'}}</label>
+  </div>
+
+
+  <textarea *ngIf="type=='textarea'" class="form-control" [formControlName]="name" [id]="name" [rows]="rows"
+    placeholder="{{placeholder?placeholder:'Digite o '+label}}" [class.is-invalid]="submitted && f.errors"></textarea>
+
+
+  <ng-select placeholder="{{placeholder?placeholder:'Selecione o '+label}}" (change)="emit('change')"
+    *ngIf="type=='select'" [items]="items" [formControlName]="name" [id]="name" [addTag]="addCustomUser"
+    [class.is-invalid]="submitted && f.errors" [multiple]="multiple" bindLabel="{{selectLabel}}"
+    notFoundText="{{notFoundText}}" bindValue="{{ tag?selectLabel: selectId}}">
+  </ng-select>
+
+  <div *ngIf="type=='html'" class="input-group">
+    <ckeditor [formControlName]="name" [id]="name" [editor]="Editor">
+    </ckeditor>
+  </div>
+
+  <span class="font-10 text-muted">{{ex}}</span>
+  <div *ngIf="submitted && f.errors" class="invalid-feedback">
+    <div *ngIf="f.errors.required">{{label}} é obrigatório</div>
+    <div *ngIf="f.errors.cpf">{{label}} está incorreto</div>
+    <div *ngIf="f.errors.cnpj">{{label}} está incorreto</div>
+    <div *ngIf="f.errors.pattern">{{label}} com caracteres inválido</div>
+
+    <div *ngIf="f.errors.max">Valor máximo {{f.errors.max.max}}, atual {{f.errors.max.actual}} </div>
+    <div *ngIf="f.errors.min">Valor mínimo {{f.errors.min.min}}, atual {{f.errors.min.actual}} </div>
+  </div>
+
+
+
+</div> -->
