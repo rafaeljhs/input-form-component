@@ -3,7 +3,10 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-exemple',
   templateUrl: './exemple.component.html',
-  styleUrls: ['./exemple.component.scss']
+  styleUrls: [
+    './exemple.component.scss',
+    
+  ]
 })
 export class ExempleComponent implements OnInit {
   formSimple: FormGroup;
@@ -51,7 +54,7 @@ export class ExempleComponent implements OnInit {
     }
     this.submitting = true;
   }
- 
+
   onSubmit1() {
     this.submittedSimple = true;
     if (this.formSimple.invalid) {

@@ -1,16 +1,29 @@
-import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit, ViewEncapsulation } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 declare var flatpickr
 
+// alterar versão
+//'npm run build:lib' na raiz
+//'npm pack .' para buidar
+//'npm rum deploy' para piblicar tem que ir na pastar raiz
 
+
+//npm unpublish input-form-component@0.0.2
 @Component({
   selector: 'input-form',
   templateUrl: './input-form-component.html',
-  styleUrls: ['./input-form.component.scss']
+  styleUrls: [
+    './input-form.component.scss',
+    "../../node_modules/ngx-ui-switch/ui-switch.component.css",
+    "../../node_modules/@ng-select/ng-select/themes/default.theme.css",
+    './_ui-switch.scss',
+  ],
+  encapsulation:ViewEncapsulation.None
+
 })
-export class InputFormComponentComponent implements OnInit {
+export class InputFormComponent implements OnInit {
   @Input() label: string;
   @Input() name: string;
   @Input() mask: string = null;

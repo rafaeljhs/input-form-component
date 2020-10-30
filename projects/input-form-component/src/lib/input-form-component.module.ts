@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { InputFormComponentComponent } from './input-form-component.component';
+import { InputFormComponent } from './input-form-component';
 import { NgxMaskModule } from 'ngx-mask'
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
@@ -11,7 +11,7 @@ import { ColorPickerModule } from 'ngx-color-picker';
 
 
 @NgModule({
-  declarations: [InputFormComponentComponent],
+  declarations: [InputFormComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -21,6 +21,6 @@ import { ColorPickerModule } from 'ngx-color-picker';
     ColorPickerModule,
     NgxMaskModule.forRoot(),
   ],
-  exports: [InputFormComponentComponent]
+  exports: [InputFormComponent]
 })
 export class InputFormComponentModule { }
