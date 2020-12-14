@@ -11,6 +11,8 @@ declare var flatpickr
 
 
 //npm unpublish input-form-component@0.0.2
+
+// teste de pull request
 @Component({
   selector: 'input-form',
   templateUrl: './input-form-component.html',
