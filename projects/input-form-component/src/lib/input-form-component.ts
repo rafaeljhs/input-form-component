@@ -120,6 +120,7 @@ export class InputFormComponent implements OnInit {
       }
       if (mode)
         flatpickr('#' + this.name, {
+			allowInput: true,
           locale: "pt",
           mode,
           altInput: true,
