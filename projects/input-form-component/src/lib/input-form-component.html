@@ -49,7 +49,7 @@
   <ng-select placeholder="{{placeholder?placeholder:'Selecione o '+label}}" (change)="emit('change')"
     *ngIf="type=='select'" [items]="items" [formControlName]="name" [id]="name" [addTag]="addCustomUser"
     [class.is-invalid]="submitted && f.errors" [multiple]="multiple" bindLabel="{{selectLabel}}"
-    notFoundText="{{notFoundText}}" bindValue="{{ tag?selectLabel: selectId}}">
+    notFoundText="{{notFoundText}}" bindValue="{{selectId}}">
   </ng-select>
 
   <div *ngIf="type=='html'" class="input-group">
