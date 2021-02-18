@@ -12,6 +12,7 @@
     "ngx-mask": "^10.0.4",
     "@ng-select/ng-select": "^5.0.4",
     "ngx-ui-switch": "^10.0.2",
+    "ng2-currency-mask": "^9.0.2",
     "@ckeditor/ckeditor5-angular": "^1.2.3"
   },
   "dependencies": {
