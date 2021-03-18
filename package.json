@@ -8,6 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "deploy": "ng build --prod && firebase deploy",
     "build:lib": "ng-packagr -p ./projects/input-form-component/ng-package.json"
   },
   "private": true,
@@ -22,6 +23,8 @@
     "@angular/router": "~10.1.4",
     "@rafaeljr96/input-form-component": "0.0.6",
     "bootstrap": "^4.5.2",
+    "ng2-currency-mask": "^9.0.2",
+    "ngx-ui-switch": "^10.0.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
